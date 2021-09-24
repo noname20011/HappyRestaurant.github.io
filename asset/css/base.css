@@ -1,0 +1,178 @@
+:root {
+    --header-height: 3rem;
+    --hue-color: 17;
+    --main-color: hsl(var(--hue-color), 76%, 56%);
+    --border-color: hsl(var(--hue-color), 84%, 67%);
+    --background-img-color: hsl(var(--hue-color), 3%, 20%);
+    --background-color: hsl(var(--hue-color), 5%, 99%);
+    --background-color-alt: hsl(var(--hue-color), 94%, 95%);
+    --title-color: hsl(var(--hue-color), 4%, 20%);
+    --text-color: hsl(var(--hue-color), 4%, 52%);
+    --title-color-alt: hsl(var(--hue-color), 6%, 72%);
+    --subtitle-color: hsl(var(--hue-color), 96%, 62%);
+    --white-color: hsl(var(--hue-color), 96%, 100%);
+    --scroll-bar-color: hsl(var(--hue-color), 96%, 94%);
+    --scroll-bar-thumb-color: hsl(var(--hue-color), 96%, 72%);
+    --scroll-bar-thumb-alt: hsl(var(--hue-color), 96%, 62%);
+    /* =============== FONT SIZE ========== */
+    --body-font: 'Nunito', sans-serif;
+    --biggest-font-size: 5rem;
+    --big-font-size: 2.5rem;
+    --h1-font-size: 1.9rem;
+    --h2-font-size: 1.75rem;
+    --h3-font-size: 1.5rem;
+    --normal-font-size: 1.2rem;
+    --small-font-size: 1.05rem;
+    --smaller-font-size: 0.95rem;
+    /* ======== FONT WEIGHT ========== */
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    /* =============== MARGIN BOTTOM ========== */
+    --mb-0-5: 0.5rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3-5: 3.5rem;
+    /* =============== Z-INDEX ========== */
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+@media screen and (min-width:968px) {
+     :root {
+        --biggest-font-size: 5rem;
+        --big-font-size: 4rem;
+        --h1-font-size: 3rem;
+        --h2-font-size: 2.6rem;
+        --h3-font-size: 2.2rem;
+        --normal-font-size: 1.6rem;
+        --small-font-size: 1.4rem;
+        --smaller-font-size: 1.2rem;
+    }
+}
+
+
+/* =============== GOOGLE FONTS ========= */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+/* =============== BASE ========= */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: inherit;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+}
+
+body {
+    padding: var(--header-height) 0 0 0;
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--background-color);
+    font-weight: var(--font-medium);
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--body-font);
+    font-weight: var(--font-semi-bold);
+    color: var(--title-color);
+}
+
+
+/* input,
+button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+} */
+
+ul,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    font-family: inherit;
+}
+
+
+/* =============== RENEWABLE CSS CLASS ========= */
+
+.container {
+    margin-left: var(--mb-2-5);
+    margin-right: var(--mb-2-5);
+    max-width: 968px;
+}
+
+.section {
+    padding: 8rem 0 4rem;
+}
+
+.section__title {
+    color: var(--title-color);
+    font-size: var(--big-font-size);
+    text-align: center;
+    /* text-transform: capitalize; */
+    margin-bottom: var(--mb-3-5);
+}
+
+.section__subtitle {
+    color: var(--main-color);
+}
+
+.title__main {
+    text-align: start;
+    font-size: var(--biggest-font-size);
+    font-weight: var(--font-medium);
+}
+
+.grid {
+    display: grid;
+    gap: 2.5rem;
+}
+
+.button {
+    display: inline-block;
+    padding: 1rem 3rem;
+    border: 2px solid red;
+    font-size: var(--h3-font-size);
+    border-radius: .5rem;
+    color: red;
+    background: transparent;
+    position: relative;
+    z-index: 1;
+}
+
+.button::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background-color: red;
+    transition: .3s linear;
+    z-index: -1;
+}
+
+.button:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+.button:hover {
+    color: var(--white-color);
+}
